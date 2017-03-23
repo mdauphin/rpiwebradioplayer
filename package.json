@@ -5,7 +5,8 @@
   "main": "player.js",
   "dependencies": {
     "express": "^4.15.2",
-    "mplayer": "^2.1.0"
+    "mplayer": "^2.1.0",
+    "node-bluetooth": "^1.1.0"
   },
   "devDependencies": {},
   "scripts": {
