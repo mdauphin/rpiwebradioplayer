@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <h1>Radio Player</h1>
+  <p>Radio list.</p>
+<div id="app">
+  <div class="media" v-for="item in items">
+   <div class="media-left">
+     <img class="media-object" v-bind:src="item.image" />
+   </div>
+   <div class="media-body" >
+	<h3 class="media-heading">{{ item.title }}</h3>
+	<p>{{item.subtitle}}</p>
+	<button v-on:click="display(item)">Play</button>
+   </div>
+  </div>
+</div>
+</div>
+
+<script src="https://unpkg.com/vue@latest/dist/vue.js"></script>
+<script>
+var apiURL = '/data.js';
+
+var demoList = new Vue({
+
+  el: '#app',
+
+  data: {
+    items: []
+  },
+
+  created: function () {
+    var self = this ;
+    $.getJSON("/data.js", function(data) {
+	self.items = data ;
+    });
+  },
+  methods: {
+	display: function(item) {
+		$.ajax( { 
+		    type: 'GET',
+		    url: '/play',
+                    data: { 'url' : item.url },
+		    success : function(data) {
+			console.log("ok");
+		    }
+		} );			
+		console.log("display" + item.url );
+	}
+  }
+
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "rpiwebradioplayer",
+  "version": "1.0.0",
+  "description": " Play WebRadio with RaspberryPi to bluetooth speaker",
+  "main": "player.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mplayer": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdauphin/rpiwebradioplayer.git"
+  },
+  "keywords": [
+    "rpi",
+    "web",
+    "radio",
+    "bluetooth",
+    "player"
+  ],
+  "author": "mdauphin",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/mdauphin/rpiwebradioplayer/issues"
+  },
+  "homepage": "https://github.com/mdauphin/rpiwebradioplayer#readme"
+}
